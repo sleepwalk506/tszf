@@ -1,0 +1,9 @@
+{
+  "extends": "@vue/tsconfig/tsconfig.dom.json",
+  "include": ["env.d.ts", "src/**/*", "src/**/*.vue"],
+  "exclude": ["src/**/__tests__/*"],
+  "compilerOptions": {
+    "incremental": true, // 启用增量编译
+    "tsBuildInfoFile": "./build/.tsbuildinfo" // 指定构建信息文件路径
+  }
+}

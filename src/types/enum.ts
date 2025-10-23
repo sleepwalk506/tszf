@@ -1,0 +1,20 @@
+export enum ERouterName {
+  HOME = 'home',
+  MEDIA = 'media',
+  MONITOR = 'monitor',
+  DEVICES = 'devices',
+  TASK_ASSIGN = 'task_assign',
+  TASK_LIST = 'task_list',
+  WAYLINE = 'wayline',
+  ASSESSMENT_TOPBAR = 'assessment_TopBar',
+  TOPBAR_FORFIRE = 'topBar_for_fire',
+  RECONSTRUCT = 'reconstruct',
+  // IDENTIFY = 'identify',
+  ASSESSMENT = 'assessment',
+  ASSESSMENT_DETAIL = 'assessment_detail',
+  DRONE_TRAIL = 'drone_trail',
+  PEOPLE_IDENTIFY = 'people_identify',
+  FIRE_MONITOR = 'fire_monitor',
+  // ZHAN1017 = 'zhan_1017'
+  STREAM = 'stream',
+}

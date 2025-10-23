@@ -1,0 +1,44 @@
+/* 移动端适配（768px以下） */
+@media (max-width: 768px) {
+  .damage-assessment-container {
+    padding: 10px;
+  }
+
+  .section-card {
+    padding: 16px;
+  }
+
+  .pie-chart {
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .chart-item {
+    gap: 8px;
+    height: 40px;
+  }
+
+  .chart-label {
+    width: 80px;
+    font-size: 12px;
+  }
+
+  .chart-value {
+    width: 120px;
+    font-size: 12px;
+  }
+
+  .pie-chart-inner {
+    width: 240px;
+    height: 240px;
+  }
+
+  .pie-center-text {
+    width: 110px;
+    height: 110px;
+  }
+
+  .total-number {
+    font-size: 22px;
+  }
+}

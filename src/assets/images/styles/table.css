@@ -1,0 +1,242 @@
+/* 表格外层容器 */
+.native-table-container {
+  width: 100%;
+  overflow-x: auto;
+  border-radius: 8px;
+}
+
+/* 表格基础样式 */
+.custom-table {
+  width: 100%;
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* 表格表头 */
+.table-header {
+  background: linear-gradient(135deg, #f5f7fa 0%, #e8ecf1 100%);
+}
+
+.custom-table th {
+  padding: 14px 12px;
+  border: 1px solid #e8e8e8;
+  font-weight: 600;
+  color: #1f2329;
+  text-align: center;
+  position: relative;
+}
+
+/* 表头hover下划线 */
+.custom-table th::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #1890ff, transparent);
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.custom-table th:hover::after {
+  opacity: 1;
+}
+
+/* 表格单元格 */
+.custom-table td {
+  padding: 14px 12px;
+  border: 1px solid #e8e8e8;
+  transition: all 0.3s ease;
+}
+
+/* 表格行动画 */
+.table-row {
+  opacity: 0;
+  animation: rowSlideIn 0.5s ease forwards;
+  transition: all 0.3s ease;
+}
+
+@keyframes rowSlideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* 表格行hover效果 */
+.table-row:hover {
+  background: linear-gradient(90deg, #fafafa 0%, #f5f7fa 100%);
+  transform: scale(1.01);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+/* 单元格文本对齐 */
+.text-center {
+  text-align: center;
+}
+
+/* 项目名称样式 */
+.item-name {
+  font-weight: 500;
+  color: #1f2329;
+}
+
+.item-icon {
+  font-size: 16px;
+  margin-right: 4px;
+}
+
+/* 描述单元格 */
+.description-cell {
+  color: #4e5969;
+  line-height: 1.6;
+}
+
+/* 严重程度标签 */
+.severity-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  border-radius: 16px;
+  font-size: 12px;
+  color: #fff;
+  font-weight: 500;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  transition: all 0.3s ease;
+  animation: tagPulse 2s ease-in-out infinite;
+}
+
+@keyframes tagPulse {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+.severity-tag:hover {
+  transform: scale(1.1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+}
+
+/* 标签小点动画 */
+.severity-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.8);
+  animation: dotBlink 1.5s ease-in-out infinite;
+}
+
+@keyframes dotBlink {
+  0%,
+  100% {
+    opacity: 0.5;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+/* 严重程度颜色 */
+.severity-minor {
+  background: linear-gradient(135deg, #52c41a, #73d13d);
+}
+
+.severity-medium {
+  background: linear-gradient(135deg, #faad14, #ffc53d);
+}
+
+.severity-severe {
+  background: linear-gradient(135deg, #f5222d, #ff4d4f);
+}
+
+.severity-critical {
+  background: linear-gradient(135deg, #ff4d4f, #ff7875);
+}
+
+/* 进度条单元格 */
+.progress-cell {
+  padding: 8px 12px;
+}
+
+/* 进度条外层 */
+.progress-wrapper {
+  height: 10px;
+  background-color: #f0f2f5;
+  border-radius: 5px;
+  overflow: hidden;
+  width: 100%;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+
+/* 进度条填充 */
+.progress-fill {
+  height: 100%;
+  transition: width 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  border-radius: 5px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+/* 进度条闪光动画 */
+.progress-shine {
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+  animation: shine 2s ease-in-out infinite;
+}
+
+@keyframes shine {
+  0% {
+    left: -100%;
+  }
+  100% {
+    left: 100%;
+  }
+}
+
+/* 进度条颜色 */
+.progress-minor {
+  background: linear-gradient(90deg, #52c41a, #73d13d);
+}
+
+.progress-severe {
+  background: linear-gradient(90deg, #faad14, #ffc53d);
+}
+
+.progress-critical {
+  background: linear-gradient(90deg, #f5222d, #ff7875);
+}
+
+/* 进度百分比 */
+.progress-percentage {
+  text-align: right;
+  font-size: 12px;
+  color: #666;
+  margin-top: 4px;
+  font-weight: 500;
+  animation: numberFadeIn 0.5s ease;
+}
+
+@keyframes numberFadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
